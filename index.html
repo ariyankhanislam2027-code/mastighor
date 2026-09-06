@@ -227,7 +227,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
       <div class="vp-feature-icon">➤</div>
       <div>
         <h3>সহজ পেমেন্ট প্রক্রিয়া</h3>
-        <p>Payment করার পর Sender Number ও Transaction ID জমা দিন।</p>
+        <p>Payment করার পর Transaction ID জমা দিন।</p>
       </div>
     </article>
 
@@ -319,7 +319,9 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
   <!-- SUPPORT -->
   <section class="vp-support-section">
 
-    <div class="vp-support-icon">✈</div>
+    <div class=""><a href="https://t.me/mastighorbd" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Logo" width="50">
+</a></div>
 
     <h2>কোনো সাহায্য প্রয়োজন?</h2>
 
@@ -332,7 +334,7 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
       target="_blank"
       rel="noopener noreferrer"
       class="vp-support-button">
-      ✈ Telegram Support
+      ➤ Telegram Support
     </a>
 
   </section>
@@ -489,6 +491,8 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
       <strong>Send Money</strong>
       অপশন ব্যবহার করুন।
     </div>
+
+
 
     <!-- TRANSACTION -->
     <div class="vp-form-group">
@@ -2647,11 +2651,6 @@ document.addEventListener(
       "click",
       function(){
 
-        const sender =
-          document.getElementById(
-            "vpSenderNumber"
-          ).value.trim();
-
         const transaction =
           document.getElementById(
             "vpTransactionId"
@@ -2665,7 +2664,7 @@ document.addEventListener(
 
         /* EMPTY INFORMATION */
 
-        if(!sender || !transaction){
+        if(!transaction){
 
           result.innerHTML=`
 
@@ -2682,9 +2681,7 @@ document.addEventListener(
                 </h3>
 
                 <p>
-                  সঠিক Information দিন।
-                  Sender Number এবং Transaction ID
-                  সঠিকভাবে প্রদান করুন।
+                  সঠিক Transaction ID দিন।
                   সমস্যা হলে Support-এ যোগাযোগ করুন।
                   বারবার ভুল Information দিলে
                   আপনার Account Ban করা হতে পারে।
@@ -2800,7 +2797,7 @@ function vpRetryPayment(){
   ).innerHTML="";
 
   document.getElementById(
-    "vpSenderNumber"
+    "vpTransactionId"
   ).focus();
 
 }
